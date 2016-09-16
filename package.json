@@ -1,7 +1,7 @@
 {
   "name": "vaka",
   "version": "0.0.1",
-  "description": "",
+  "description": "macOS: prevent computer from going to sleep",
   "main": "./dist/index.js",
   "scripts": {
     "test": "echo 'no tests'",
@@ -38,5 +38,16 @@
       "es2015"
     ]
   },
-  "dependencies": {}
+  "dependencies": {
+    "caffeinate": "0.0.1",
+    "noidle": "0.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogerbf/vaka.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rogerbf/vaka/issues"
+  },
+  "homepage": "https://github.com/rogerbf/vaka#readme"
 }
