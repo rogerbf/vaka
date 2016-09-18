@@ -39,8 +39,8 @@
     ]
   },
   "dependencies": {
-    "caffeinate": "0.0.1",
-    "noidle": "0.0.1"
+    "caffeinate": "0.1.0",
+    "noidle": "0.0.2"
   },
   "repository": {
     "type": "git",
