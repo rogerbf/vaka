@@ -1,18 +1,32 @@
 <img src="https://raw.githubusercontent.com/rogerbf/vaka/master/vaka-400x400.png" width="200px" height="200px">
 
 # vaka
-Prevents a macOS computer from going to sleep. Uses either `caffeinate` or `pmset` depending on system version. If a process identifier is supplied, the computer will not sleep until that process exits.
+
+Prevent a system running macOS from going to sleep. Picks the preferred method (`pmset`/`caffeinate`) depending on system version.
 
 ## usage
 
 ``` javascript
-const vaka = require('vaka')
+const vaka = require(`vaka`)
 
-// promises
-vaka(process.pid)
-  .then(pid => console.log(`caffeinate/pmset pid: ${pid}`))
-  .catch(e => console.log(e))
+// Prevent sleep indefinitely
+vaka()
+.then(console.log.bind(null, `caffeinate/pmset pid:`))
+.catch(console.log)
 
-// callback
-vaka(process.pid, (e, pid) => console.log(`caffeinate/pmset pid: ${pid}`))
+// Prevent sleep until process exits
+vaka({ pid: process.pid })
+.then(console.log.bind(null, `caffeinate/pmset pid:`))
+.catch(console.log)
+
+// Prevent sleep for 10 seconds
+vaka({ timeout: 10 })
+.then(console.log.bind(null, `caffeinate/pmset pid:`))
+.catch(console.log)
 ```
+
+## api
+
+### `vaka([options])`
+
+Returns a Promise which resolves to the pid belonging to the underlying `pmset` or `caffeinate` instance.

@@ -1,7 +1,7 @@
 {
   "name": "vaka",
-  "version": "0.0.2",
-  "description": "macOS: prevent computer from going to sleep",
+  "version": "1.0.0",
+  "description": "prevent a macOS system from going to sleep",
   "main": "./dist/index.js",
   "scripts": {
     "test": "echo 'no tests'",
@@ -11,7 +11,13 @@
     "start": "npm run build && node ./dist/index.js",
     "start:watch": "nodemon --watch src -x npm run start"
   },
-  "keywords": [],
+  "keywords": [
+    "noidle",
+    "pmset",
+    "caffeinate",
+    "sleep",
+    "utility"
+  ],
   "author": "rogerbf <roger@bergfalk.nu> (http://bergfalk.nu/)",
   "license": "MIT",
   "devDependencies": {
@@ -39,8 +45,8 @@
     ]
   },
   "dependencies": {
-    "caffeinate": "0.1.0",
-    "noidle": "0.0.2"
+    "caffeinate": "^1.0.1",
+    "noidle": "^2.0.1"
   },
   "repository": {
     "type": "git",
